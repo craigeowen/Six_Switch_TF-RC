@@ -118,6 +118,20 @@ module "config-ipv4-int-address" {
   ipv4_vrf_map = var.ipv4_vrf_map
 }
 
+##### Configure Static routes #####
+module "config-static-route" {
+  source = "./modules/routing"
+  provider-username = var.provider-username
+  provider-userpass = var.provider-userpass
+  provider-url-core01 = var.provider-url-core01
+  provider-url-core02 = var.provider-url-core02
+  static-routes_map_core01 = var.static-routes_map_core01
+  static-routes_map_core02 = var.static-routes_map_core02  
+  #bgp_map = var.bgp_map
+}
+
+
+
 # ##### Configure  SVI #####
 # module "config-svi" {
 #   source = "./modules/svi"

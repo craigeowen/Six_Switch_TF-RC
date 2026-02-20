@@ -332,6 +332,52 @@ ipv4_int_address_map-core02 = {
       
 }
 
+##### ADD STATIC ROUTES #####
+static-routes_map_core01 = {
+  "Core01-to-agg01" = {
+    vrf_name = "xx01_es_core"
+    prefix   = "10.66.127.3/32"
+    interface_id = "po111.3010"
+    nh-address = "10.66.125.3"
+    },
+  "Core01-to-agg02" = {
+    vrf_name = "xx01_es_core"
+    prefix   = "10.66.127.4/32"
+    interface_id = "po112.3010"
+    nh-address = "10.66.125.5"
+    },
+   "Core01-to-core02" = {
+    vrf_name = "xx01_es_core"
+    prefix   = "10.66.127.2/32"
+    interface_id = "po12.3010"
+    nh-address = "10.66.125.1"
+    }, 
+              
+}
+
+static-routes_map_core02 = {
+  "Core02-to-agg01" = {
+    vrf_name = "xx01_es_core"
+    prefix   = "10.66.127.3/32"
+    interface_id = "po121.3010"
+    nh-address = "10.66.125.7"
+    },
+  "Core02-to-agg02" = {
+    vrf_name = "xx01_es_core"
+    prefix   = "10.66.127.4/32"
+    interface_id = "po122.3010"
+    nh-address = "10.66.125.9"
+    }, 
+  "Core02-to-core01" = {
+    vrf_name = "xx01_es_core"
+    prefix   = "10.66.127.1/32"
+    interface_id = "po12.3010"
+    nh-address = "10.66.125.0"
+    },               
+}
+
+
+
 ##### STATIC VARS CAUTION BEFORE CHANGING #####
 provider-username = "cisco"
 provider-userpass = "cisco"

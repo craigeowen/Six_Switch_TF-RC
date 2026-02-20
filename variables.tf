@@ -166,3 +166,21 @@ variable "ipv4_int_address_map-core02" {
    address = string
  }))
 }
+
+variable "static-routes_map_core01" {
+ type = map(object({
+   vrf_name = string
+   prefix = string
+   interface_id = string
+   nh-address  = string
+}))
+}
+
+variable "static-routes_map_core02" {
+ type = map(object({
+   vrf_name = string
+   prefix = string
+   interface_id = string
+   nh-address  = string  
+ }))
+}
